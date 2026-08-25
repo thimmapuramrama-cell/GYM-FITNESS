@@ -1,0 +1,53 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#060606;color:#fff;font-family:'Inter',sans-serif}
+
+.creative-section{padding:70px 0;background:radial-gradient(ellipse at top, #1a1a1a 0%, #060606 70%);overflow:hidden}
+.top-bar{padding:0 5%;display:flex;justify-content:space-between;align-items:end;margin-bottom:35px;flex-wrap:wrap;gap:15px}
+.top-bar h2{font-family:'Oswald';font-size:38px;letter-spacing:1px;line-height:0.9}
+.top-bar h2 span{color:#ff2a2a}
+.top-bar p{color:#777;max-width:340px;font-size:13px}
+
+.carousel-viewport{padding:0 5%;overflow:hidden;position:relative}
+.track{display:flex;gap:22px;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);will-change:transform}
+
+.card{
+  min-width:calc(33.333% - 15px);
+  background:linear-gradient(180deg,#161616 0%,#0f0f0f 100%);
+  border:1px solid #222;
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
+  transition:0.4s;
+}
+.card:hover{transform:translateY(-8px);border-color:#ff2a2a;box-shadow:0 20px 40px rgba(255,42,42,0.15)}
+.card-img{height:180px;position:relative;overflow:hidden;background:#111}
+.card-img img{width:100%;height:100%;object-fit:cover;opacity:0.8;transition:0.5s}
+.card:hover.card-img img{transform:scale(1.1);opacity:1}
+.card-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0f0f0f 0%, transparent 60%)}
+.icon-badge{position:absolute;top:14px;left:14px;z-index:2;background:#ff2a2a;color:#fff;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:6px 12px;border-radius:20px}
+.card-body{padding:22px}
+.card-body h3{font-family:'Oswald';font-size:16px;letter-spacing:0.5px;color:#fff8c0;margin-bottom:10px;line-height:1.1}
+.card-body p{font-size:13px;color:#888;line-height:1.7;display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden}
+.card-body.line{height:3px;width:100%;background:linear-gradient(90deg,#ff2a2a,transparent);margin-top:18px;border-radius:10px}
+
+.controls{padding:0 5%;display:flex;align-items:center;justify-content:space-between;margin-top:28px}
+.arrows{display:flex;gap:10px}
+.arr{width:46px;height:46px;border-radius:50%;background:#161616;border:1px solid #2a2a2a;color:#fff;cursor:pointer;font-size:18px;transition:0.3s}
+.arr:hover{background:#ff2a2a;border-color:#ff2a2a;transform:scale(1.05)}
+.dots{display:flex;gap:8px;align-items:center}
+.dot{height:8px;border-radius:20px;background:#2a2a2a;cursor:pointer;transition:0.4s;width:8px}
+.dot.active{width:32px;background:#ff2a2a}
+
+/* TABLET - 2 slides */
+@media(max-width:1024px){
+ .card{min-width:calc(50% - 11px)}
+ .top-bar h2{font-size:32px}
+}
+
+/* MOBILE - 1 slide */
+@media(max-width:767px){
+ .card{min-width:100%}
+ .top-bar h2{font-size:28px}
+ .arr{display:none}
+ .controls{justify-content:center}
+}
